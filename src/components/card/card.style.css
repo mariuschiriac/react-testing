@@ -12,4 +12,5 @@
 }
 .card-container:hover {
   transform: scale(1.05);
+  background-image: linear-gradient(turquoise, rgb(251, 255, 0));
 }
