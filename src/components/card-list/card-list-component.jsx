@@ -4,8 +4,12 @@ import { Card } from "../card/card-component";
 
 export const CardList = props => (
   <div className="card-list">
-    {props.weapons.map(weapons => (
-      <Card key={weapons.id} weapons={weapons} />
+    {props.weapons.map(weapon => (
+      <section key={weapon.id}>
+        <div>
+          <Card weapons={weapon} />
+        </div>
+      </section>
     ))}
   </div>
 );
