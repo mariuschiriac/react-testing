@@ -3,8 +3,10 @@ import { ResponsiveComponent } from "../responsive/responsive.component";
 
 export const Dashboard = () => {
   return (
-    <div style={{ margin: "300px 0px" }}>
-      <ResponsiveComponent />
-    </div>
+    <section style={{ margin: "300px 0px" }}>
+      <div>
+        <ResponsiveComponent />
+      </div>
+    </section>
   );
 };

@@ -17,6 +17,9 @@ export default class CardListComponent extends Component {
       .then(response => response.json())
       .then(weapons => this.setState({ weapons: weapons }));
   }
+  componentWillUnmount() {
+    clearInterval(this.state);
+  }
 
   render() {
     return (
