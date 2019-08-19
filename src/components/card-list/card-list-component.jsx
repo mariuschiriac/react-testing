@@ -11,12 +11,19 @@ export default class CardListComponent extends Component {
   }
 
   componentDidMount() {
+    this.loadData();
+    this.intervalId = setInterval(() => this.loadData(), 15000);
+  }
+
+  loadData() {
     fetch(
       "https://my-json-server.typicode.com/mariuschiriac/fake-server/weapons"
     )
       .then(response => response.json())
-      .then(weapons => this.setState({ weapons: weapons }));
+      .then(weapons => this.setState({ weapons: weapons }))
+      .then(console.log(this.state.weapons));
   }
+
   componentWillUnmount() {
     clearInterval(this.state);
   }
