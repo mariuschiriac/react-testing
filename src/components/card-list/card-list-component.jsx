@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card } from "../card/card-component";
 import "./card-list.styles.css";
 
-export class CardListComponent extends Component {
+export default class CardListComponent extends Component {
   constructor() {
     super();
     this.state = {

@@ -2,7 +2,7 @@ import React from "react";
 import { Toolbar, AppBar, Button } from "@material-ui/core";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Dashboard } from "../dashboard/dashboard.component";
-import { CardListComponent } from "../card-list/card-list-component";
+import CardListComponent from "../card-list/card-list-component";
 
 const classvariant = {
   margin: "0px 20px"
