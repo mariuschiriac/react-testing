@@ -14,7 +14,7 @@ export const NavBar = () => {
       <div>
         <AppBar color="secondary">
           <Toolbar>
-            <Link to="/card">
+            <Link to="/">
               <Button style={classvariant} variant="contained" color="primary">
                 card
               </Button>
@@ -29,7 +29,7 @@ export const NavBar = () => {
         </AppBar>
       </div>
 
-      <Route path="/card" component={CardListComponent} />
+      <Route path="/" component={CardListComponent} />
       <Route path="/dashboard/" component={Dashboard} />
     </Router>
   );
