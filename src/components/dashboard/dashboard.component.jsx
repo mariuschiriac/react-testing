@@ -1,13 +1,11 @@
 import React from "react";
 import ResponsiveComponent from "../responsive/responsive.component";
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import canzoni from "../../reducers/canzoni";
 import { Provider } from "react-redux";
 
-const storeCanzoni = createStore(
-  canzoni,
-  window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION()
-);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const storeCanzoni = createStore(canzoni, composeEnhancers());
 
 export const Dashboard = () => {
   return (

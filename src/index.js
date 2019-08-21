@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
@@ -20,14 +20,9 @@ const reducer = (state = 0, action) => {
   }
   return state;
 };
-const store = createStore(
-  reducer,
-  window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION()
-);
 
-store.subscribe(() => {
-  console.log("store state", store.getState());
-});
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, composeEnhancers());
 
 store.dispatch({
   type: "ADD",
