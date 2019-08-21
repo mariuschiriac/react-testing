@@ -4,7 +4,11 @@ import { createStore, compose } from "redux";
 import canzoni from "../../reducers/canzoni";
 import { Provider } from "react-redux";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    trace: true,
+    traceLimit: 25
+  }) || compose;
 const storeCanzoni = createStore(canzoni, composeEnhancers());
 
 export const Dashboard = () => {
