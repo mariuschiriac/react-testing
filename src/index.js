@@ -7,19 +7,23 @@ import { createStore } from "redux";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
-const reducer = (state, action) => {
+const reducer = (state = 0, action) => {
   switch (action.type) {
     case "ADD":
       state = state + action.payload;
       break;
     case "SUBTRACT":
+      state = state - action.payload;
       break;
     default:
       break;
   }
   return state;
 };
-const store = createStore(reducer, 1);
+const store = createStore(
+  reducer,
+  window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION()
+);
 
 store.subscribe(() => {
   console.log("store state", store.getState());
@@ -28,6 +32,11 @@ store.subscribe(() => {
 store.dispatch({
   type: "ADD",
   payload: 10
+});
+
+store.dispatch({
+  type: "SUBTRACT",
+  payload: 4
 });
 
 // If you want your app to work offline and load faster, you can change

@@ -1,11 +1,14 @@
 import React from "react";
 import MediaQuery from "react-responsive";
+import ListaCanzoni from "../canzoni/lista_canzoni";
+import AggiungiCanzone from "../canzoni/aggiungi_canzone";
 
-export const ResponsiveComponent = () => {
+const ResponsiveComponent = () => {
   return (
     <div>
       <div style={{ margin: "300px 0px" }}>
-        <div>Device Test!</div>
+        <AggiungiCanzone />
+        <ListaCanzoni />
         <MediaQuery query="(min-device-width: 1224px)">
           <div>You are a desktop or laptop</div>
           <MediaQuery query="(min-device-width: 1824px)">
@@ -31,3 +34,5 @@ export const ResponsiveComponent = () => {
     </div>
   );
 };
+
+export default ResponsiveComponent;
