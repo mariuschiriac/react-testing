@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*animazioni*/
+@-webkit-keyframes sparkle {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@keyframes sparkle {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes answer-selected {
+  20% {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  40% {
+    background: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+  }
+  60% {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+@keyframes answer-selected {
+  20% {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  40% {
+    background: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+  }
+  60% {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
