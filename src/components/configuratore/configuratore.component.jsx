@@ -17,7 +17,8 @@ export function Configuratore() {
   });
 
   if (index === configJson.length) {
-    return <Provider store={storeConfig}>Fine</Provider>;
+    //TODO da cambiare con la pagina finale figlia
+    return <Provider store={storeConfig}>{window.location.reload()}</Provider>;
   } else {
     return (
       <Provider store={storeConfig}>
