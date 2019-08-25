@@ -13,7 +13,7 @@ class App extends Component {
         </header>
       </div>
       /*
-        <Configuratore className="Component" />
+        <Bottonestart className="Component" />
         */
     );
   }
