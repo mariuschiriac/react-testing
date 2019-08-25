@@ -1,6 +1,9 @@
+import './configuratore.css';
+import './card.css';
 import React from 'react';
 import { connect } from 'react-redux';
 import { nextPasso, prevPasso } from '../../actions';
+import { Headbar } from '../headbar/headbar.component';
 
 const Passo = ({ domanda, dispatch }) => {
   function handleClick(value, titolo) {
@@ -10,51 +13,36 @@ const Passo = ({ domanda, dispatch }) => {
 
   return (
     <>
-      <h1>{domanda.titolo}</h1>
-      <ul>
+      <Headbar onPrevClick={() => dispatch(prevPasso())} />
+      <h2 className="question-title">{domanda.titolo}</h2>
+      <div className={'answer-group row-of-' + domanda.opzioni.length}>
         {domanda.opzioni.map((value, key) => {
           return (
-            <>
-              <li key={key} onClick={() => handleClick(value, domanda.titolo)}>
-                {value}
-              </li>
-            </>
+            <Card
+              key={key}
+              value={value}
+              onItemClick={() => handleClick(value, domanda.titolo)}
+            />
           );
         })}
-      </ul>
+      </div>
     </>
   );
 };
 
-// const mapStateToProps = state => ({
-
-// });
+const Card = props => {
+  return (
+    <div className="col">
+      <div className="answer js--answer" onClick={() => props.onItemClick()}>
+        <img
+          className="answer-image js--answer-image"
+          src="answer-1-1.png"
+          alt={props.value}
+        />
+        <span className="answer-text">{props.value}</span>
+      </div>
+    </div>
+  );
+};
 
 export default connect()(Passo);
-
-// class PassoClass extends React.Component {
-//   componentDidUpdate() {
-//     console.log(this.props.opzioni);
-//   }
-
-//   render() {
-//     return (
-//       <>
-//         {this.props.opzioni.map((value, key) => {
-//           return (
-//             <li key={key} onClick={() => this.props.nextPasso()}>
-//               {value}
-//             </li>
-//           );
-//         })}
-//       </>
-//     );
-//   }
-// }
-
-// const mapDispatchToProps = { nextPasso };
-
-// export default connect(
-//   null,
-//   mapDispatchToProps
-// )(PassoClass);
