@@ -21,7 +21,11 @@ export function Configuratore() {
   } else {
     return (
       <Provider store={storeConfig}>
-        <MioPasso index={index} domanda={configJson[index]} />
+        <MioPasso
+          totaleDomande={configJson.length}
+          index={index}
+          domanda={configJson[index]}
+        />
       </Provider>
     );
   }

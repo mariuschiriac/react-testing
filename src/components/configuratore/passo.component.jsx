@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { nextPasso, prevPasso } from "../../actions";
 import { Headbar } from "../headbar/headbar.component";
 
-const Passo = ({ domanda, dispatch, index }) => {
+const Passo = ({ domanda, dispatch, index, totaleDomande }) => {
   function handleClick(value, titolo) {
     console.log(value);
     dispatch(nextPasso(value, titolo));
@@ -13,7 +13,11 @@ const Passo = ({ domanda, dispatch, index }) => {
 
   return (
     <>
-      <Headbar domanda={++index} onPrevClick={() => dispatch(prevPasso())} />
+      <Headbar
+        totale={totaleDomande}
+        indice={++index}
+        onPrevClick={() => dispatch(prevPasso())}
+      />
       <h2 className="question-title">{domanda.titolo}</h2>
       <div className={"answer-group row-of-" + domanda.opzioni.length}>
         {domanda.opzioni.map((value, key) => {
