@@ -1,22 +1,34 @@
 [
-  [
-    "atk + 10",
-    "atk * 2",
-    "hp + 50"
-  ],
-  [
-    "atk + 20",
-    "atk * 3",
-    "hp + 100"
-  ],
-  [
-    "atk + 30",
-    "atk * 4",
-    "hp + 200"
-  ],
-  [
-    "atk + 100",
-    "atk * 5",
-    "hp + 400"
-  ]
+  {
+    "titolo": "opzione 1",
+    "opzioni": [
+      "atk + 20",
+      "atk * 2",
+      "hp + 100"
+    ]
+  },
+  {
+    "titolo": "opzione 2",
+    "opzioni": [
+      "atk + 20",
+      "atk * 2",
+      "hp + 100"
+    ]
+  },
+  {
+    "titolo": "opzione 3",
+    "opzioni": [
+      "atk + 20",
+      "atk * 2",
+      "hp + 100"
+    ]
+  },
+  {
+    "titolo": "ultima opzione",
+    "opzioni": [
+      "atk + 20",
+      "atk * 2",
+      "hp + 100"
+    ]
+  }
 ]

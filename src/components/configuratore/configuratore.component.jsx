@@ -13,7 +13,7 @@ export function Configuratore() {
   const [index, setIndex] = useState(0);
 
   storeConfig.subscribe(() => {
-    setIndex(storeConfig.getState());
+    setIndex(storeConfig.getState().length);
   });
 
   if (index === configJson.length) {
@@ -21,7 +21,7 @@ export function Configuratore() {
   } else {
     return (
       <Provider store={storeConfig}>
-        <MioPasso opzioni={configJson[index]} />
+        <MioPasso domanda={configJson[index]} />
       </Provider>
     );
   }

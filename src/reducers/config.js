@@ -1,7 +1,15 @@
-export const reduceConfig = (state = 0, action) => {
+export const reduceConfig = (state = [], action) => {
   switch (action.type) {
     case 'NEXT':
-      return ++state;
+      return [
+        ...state,
+        {
+          domanda: action.domanda,
+          opzioneScelta: action.opzioneScelta
+        }
+      ];
+    case 'PREV':
+      return state.slice(0, state.length - 1);
     default:
       return state;
   }

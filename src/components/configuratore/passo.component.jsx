@@ -1,24 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { nextPasso } from '../../actions';
+import { nextPasso, prevPasso } from '../../actions';
 
-const Passo = ({ opzioni, dispatch }) => {
-  function handleClick() {
-    dispatch(nextPasso());
+const Passo = ({ domanda, dispatch }) => {
+  function handleClick(value, titolo) {
+    console.log(value);
+    dispatch(nextPasso(value, titolo));
   }
 
   return (
-    <ul>
-      {opzioni.map((value, key) => {
-        return (
-          <li key={key} onClick={handleClick}>
-            {value}
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <h1>{domanda.titolo}</h1>
+      <ul>
+        {domanda.opzioni.map((value, key) => {
+          return (
+            <>
+              <li key={key} onClick={() => handleClick(value, domanda.titolo)}>
+                {value}
+              </li>
+            </>
+          );
+        })}
+      </ul>
+    </>
   );
 };
+
+// const mapStateToProps = state => ({
+
+// });
 
 export default connect()(Passo);
 
