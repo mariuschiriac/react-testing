@@ -1,31 +1,50 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { nextPasso } from '../../actions';
-import { bindActionCreators } from 'redux';
 
-const Passo = props => {
-  console.log(props);
+// const Passo = ({ opzioni, dispatch }) => {
+//   function handleClick() {
+//     dispatch(nextPasso());
+//   }
 
-  function handleClick() {
-    console.log('click');
-    nextPasso(nextPasso);
+//   return (
+//     <>
+//       {opzioni.map((value, key) => {
+//         return (
+//           <li key={key} onClick={handleClick}>
+//             {value}
+//           </li>
+//         );
+//       })}
+//     </>
+//   );
+// };
+
+// export default connect()(Passo);
+
+class PassoClass extends React.Component {
+  componentDidUpdate() {
+    console.log(this.props.opzioni);
   }
 
-  return (
-    <>
-      {props.opzioni.map((value, key) => {
-        return (
-          <li key={key} onClick={handleClick}>
-            {value}
-          </li>
-        );
-      })}
-    </>
-  );
-};
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ nextPasso }, dispatch);
+  render() {
+    return (
+      <>
+        {this.props.opzioni.map((value, key) => {
+          return (
+            <li key={key} onClick={() => this.props.nextPasso()}>
+              {value}
+            </li>
+          );
+        })}
+      </>
+    );
+  }
 }
 
-export default connect(mapDispatchToProps)(Passo);
+const mapDispatchToProps = { nextPasso };
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(PassoClass);
