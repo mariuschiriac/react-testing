@@ -72,38 +72,6 @@
     flex-basis: 25%;
   }
 }
-/*Question*/
-.question .question-description {
-  margin-top: 0;
-}
-.question .price-progress,
-.question .question-previous,
-.question .question-progress {
-  position: absolute;
-  top: 0;
-  padding: 1.5em;
-}
-.question .question-previous {
-  left: 0;
-  text-decoration: none;
-}
-.question .question-progress {
-  left: 0;
-  right: 0;
-}
-.question .price-progress {
-  right: 0;
-}
-@media screen and (min-width: 678px) {
-  .question .question-description {
-    margin-bottom: 2em;
-  }
-  .question .price-progress,
-  .question .question-previous,
-  .question .question-progress {
-    padding: 2em;
-  }
-}
 
 /*Answer CSS*/
 .answer {
