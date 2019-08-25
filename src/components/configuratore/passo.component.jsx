@@ -1,4 +1,3 @@
-import "./configuratore.css";
 import "./card.css";
 import React from "react";
 import { connect } from "react-redux";
@@ -18,18 +17,20 @@ const Passo = ({ domanda, dispatch, index, totaleDomande }) => {
         indice={++index}
         onPrevClick={() => dispatch(prevPasso())}
       />
-      <h2 className="question-title">{domanda.titolo}</h2>
-      <div className={"answer-group row-of-" + domanda.opzioni.length}>
-        {domanda.opzioni.map((value, key) => {
-          return (
-            <Card
-              key={key}
-              value={value}
-              onItemClick={() => handleClick(value, domanda.titolo)}
-            />
-          );
-        })}
-      </div>
+      <section className="section question">
+        <h2>{domanda.titolo}</h2>
+        <div className={"answer-group row-of-" + domanda.opzioni.length}>
+          {domanda.opzioni.map((value, key) => {
+            return (
+              <Card
+                key={key}
+                value={value}
+                onItemClick={() => handleClick(value, domanda.titolo)}
+              />
+            );
+          })}
+        </div>
+      </section>
     </>
   );
 };

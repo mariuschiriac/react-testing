@@ -1,4 +1,4 @@
-import "./configuratore.css";
+import "./card.css";
 import React, { useState } from "react";
 import configJson from "../../assets/config.json";
 import MioPasso from "./passo.component";
