@@ -1,7 +1,7 @@
 import './configuratore.css';
-import React from 'react';
+import React, { useState } from 'react';
 import configJson from '../../assets/config.json';
-import Passo from './passo.component';
+import MioPasso from './passo.component';
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { reduceConfig } from '../../reducers/config';
@@ -9,16 +9,20 @@ import { reduceConfig } from '../../reducers/config';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const storeConfig = createStore(reduceConfig, composeEnhancers());
 
-export const Configuratore = () => {
-  return (
-    <Provider store={storeConfig}>
-      <ul>
-        <Passo opzioni={configJson[storeConfig.getState()]} />
-      </ul>
-    </Provider>
-  );
-};
+export function Configuratore() {
+  const [index, setIndex] = useState(0);
 
-storeConfig.subscribe(() => {
-  console.log('store state', storeConfig.getState());
-});
+  storeConfig.subscribe(() => {
+    setIndex(storeConfig.getState());
+  });
+
+  if (index === configJson.length) {
+    return <Provider store={storeConfig}>Fine</Provider>;
+  } else {
+    return (
+      <Provider store={storeConfig}>
+        <MioPasso opzioni={configJson[index]} />
+      </Provider>
+    );
+  }
+}
