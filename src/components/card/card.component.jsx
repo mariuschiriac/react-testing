@@ -4,14 +4,14 @@ import React from "react";
 export const Card = () => {
   return (
     <>
-      <section className="section initial">
+      <section className="section question">
+        <h2 className="question-title">
+          Che livello di qualità stai cercando?
+        </h2>
+
         <div className="answer-group row-of-3">
           <div className="col">
-            <div
-              className="answer js--answer"
-              data-answer-id="1"
-              data-answer-weight="60"
-            >
+            <div className="answer js--answer">
               <img
                 className="answer-image js--answer-image"
                 src="answer-1-1.png"
@@ -22,11 +22,7 @@ export const Card = () => {
             </div>
           </div>
           <div className="col">
-            <div
-              className="answer js--answer"
-              data-answer-id="2"
-              data-answer-weight="40"
-            >
+            <div className="answer js--answer">
               <img
                 className="answer-image js--answer-image"
                 src="answer-1-1.png"
@@ -36,11 +32,7 @@ export const Card = () => {
             </div>
           </div>
           <div className="col">
-            <div
-              className="answer js--answer"
-              data-answer-id="3"
-              data-answer-weight="20"
-            >
+            <div className="answer js--answer">
               <img
                 className="answer-image js--answer-image"
                 src="answer-1-1.png"

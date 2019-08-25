@@ -11,7 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+}
 
+.title {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /*animazioni*/
 @-webkit-keyframes sparkle {
   from {
