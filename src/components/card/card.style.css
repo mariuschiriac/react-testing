@@ -1,6 +1,0 @@
-.card-container {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  backface-visibility: hidden;
-}

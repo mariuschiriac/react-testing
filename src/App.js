@@ -1,13 +1,13 @@
-import React from "react";
-import { Component } from "react";
-import "./App.css";
-import { NavBar } from "./components/navbar/navbar.component";
+import React from 'react';
+import { Component } from 'react';
+import './App.css';
+import { Configuratore } from './components/configuratore/configuratore.component';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <Configuratore />
       </div>
     );
   }
