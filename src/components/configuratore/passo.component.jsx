@@ -1,10 +1,11 @@
-import "./card.css";
-import React from "react";
-import { connect } from "react-redux";
-import { nextPasso, prevPasso } from "../../actions";
-import { Headbar } from "../headbar/headbar.component";
+import './card.css';
+import React from 'react';
+import { connect } from 'react-redux';
+import { nextPasso, prevPasso } from '../../actions';
+import Headbar from '../headbar/headbar.component';
 
-const Passo = ({ domanda, dispatch, index, totaleDomande }) => {
+const Passo = ({ domanda, dispatch, index, totaleDomande, store }) => {
+  console.log(store.getState());
   function handleClick(value, titolo) {
     console.log(value);
     dispatch(nextPasso(value, titolo));
@@ -13,13 +14,20 @@ const Passo = ({ domanda, dispatch, index, totaleDomande }) => {
   return (
     <>
       <Headbar
+        costoTotale={store
+          .getState()
+          .reduce(
+            (accumulator, currentValue) =>
+              accumulator + currentValue.opzioneScelta.prezzo,
+            0
+          )}
         totale={totaleDomande}
         indice={++index}
         onPrevClick={() => dispatch(prevPasso())}
       />
       <section className="section question">
         <h2>{domanda.titolo}</h2>
-        <div className={"answer-group row-of-" + domanda.opzioni.length}>
+        <div className={'answer-group row-of-' + domanda.opzioni.length}>
           {domanda.opzioni.map((value, key) => {
             return (
               <Card
@@ -41,10 +49,10 @@ const Card = props => {
       <div className="answer js--answer" onClick={() => props.onItemClick()}>
         <img
           className="answer-image js--answer-image"
-          src="answer-1-1.png"
-          alt={props.value}
+          src={props.value.immagine}
+          alt={props.value.descrizione}
         />
-        <span className="answer-text">{props.value}</span>
+        <span className="answer-text">{props.value.descrizione}</span>
       </div>
     </div>
   );

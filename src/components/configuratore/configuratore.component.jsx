@@ -1,10 +1,10 @@
-import "./card.css";
-import React, { useState } from "react";
-import configJson from "../../assets/config.json";
-import MioPasso from "./passo.component";
-import { createStore, compose } from "redux";
-import { Provider } from "react-redux";
-import { reduceConfig } from "../../reducers/config";
+import './card.css';
+import React, { useState } from 'react';
+import configJson from '../../assets/config.json';
+import MioPasso from './passo.component';
+import { createStore, compose } from 'redux';
+import { Provider } from 'react-redux';
+import { reduceConfig } from '../../reducers/config';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const storeConfig = createStore(reduceConfig, composeEnhancers());
@@ -23,6 +23,7 @@ export function Configuratore() {
     return (
       <Provider store={storeConfig}>
         <MioPasso
+          store={storeConfig}
           totaleDomande={configJson.length}
           index={index}
           domanda={configJson[index]}

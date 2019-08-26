@@ -2,33 +2,86 @@
   {
     "titolo": "opzione 1",
     "opzioni": [
-      "atk + 20",
-      "atk * 2",
-      "hp + 100"
+      {
+        "descrizione": "costa 100 euro",
+        "prezzo": 100,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 200 euro",
+        "prezzo": 200,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 300 euro",
+        "prezzo": 300,
+        "immagine": "answer-1-1.png"
+      }
     ]
   },
   {
     "titolo": "opzione 2",
     "opzioni": [
-      "atk + 20",
-      "atk * 2",
-      "hp + 100"
+      {
+        "descrizione": "costa 10 euro",
+        "prezzo": 10,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 10 euro",
+        "prezzo": 10,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 10 euro",
+        "prezzo": 10,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 10 euro",
+        "prezzo": 10,
+        "immagine": "answer-1-1.png"
+      }
     ]
   },
   {
     "titolo": "opzione 3",
     "opzioni": [
-      "atk + 20",
-      "atk * 2",
-      "hp + 100"
+      {
+        "descrizione": "costa 100 euro",
+        "prezzo": 100,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 200 euro",
+        "prezzo": 200,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 300 euro",
+        "prezzo": 300,
+        "immagine": "answer-1-1.png"
+      }
     ]
   },
   {
     "titolo": "ultima opzione",
     "opzioni": [
-      "atk + 20",
-      "atk * 2",
-      "hp + 100"
+      {
+        "descrizione": "costa 100 euro",
+        "prezzo": 100,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 200 euro",
+        "prezzo": 200,
+        "immagine": "answer-1-1.png"
+      },
+      {
+        "descrizione": "costa 300 euro",
+        "prezzo": 300,
+        "immagine": "answer-1-1.png"
+      }
     ]
   }
 ]
