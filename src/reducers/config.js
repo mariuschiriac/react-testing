@@ -10,6 +10,8 @@ export const reduceConfig = (state = [], action) => {
       ];
     case 'PREV':
       return state.slice(0, state.length - 1);
+    case 'INIT':
+      return [];
     default:
       return state;
   }

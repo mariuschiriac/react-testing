@@ -5,6 +5,7 @@ import MioPasso from './passo.component';
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { reduceConfig } from '../../reducers/config';
+import RiassuntoEnd from '../riassunto/riassunto_end.component';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let storeConfig = createStore(reduceConfig, composeEnhancers());
@@ -15,9 +16,11 @@ export const Configuratore = props => {
   });
 
   if (props.index === configJson.length) {
-    storeConfig = createStore(reduceConfig, composeEnhancers());
-    props.end();
-    return <></>;
+    return (
+      <>
+        <RiassuntoEnd store={storeConfig} end={props.end}></RiassuntoEnd>
+      </>
+    );
   } else {
     return (
       <Provider store={storeConfig}>

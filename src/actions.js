@@ -7,3 +7,7 @@ export const nextPasso = (opzioneScelta, domanda) => ({
 export const prevPasso = () => ({
   type: 'PREV'
 });
+
+export const reset = () => ({
+  type: 'INIT'
+});
