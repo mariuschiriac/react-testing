@@ -1,14 +1,14 @@
 import React from 'react';
 import { Component } from 'react';
 import './App.css';
-import { Configuratore } from './components/configuratore/configuratore.component';
+import Bottonestart from './components/bottone/bottone-start.component';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Configuratore className="Component" />
+          <Bottonestart></Bottonestart>
         </header>
       </div>
     );

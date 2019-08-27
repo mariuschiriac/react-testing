@@ -1,5 +1,5 @@
 import './card.css';
-import React, { useState } from 'react';
+import React from 'react';
 import configJson from '../../assets/config.json';
 import MioPasso from './passo.component';
 import { createStore, compose } from 'redux';
@@ -7,28 +7,27 @@ import { Provider } from 'react-redux';
 import { reduceConfig } from '../../reducers/config';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const storeConfig = createStore(reduceConfig, composeEnhancers());
+let storeConfig = createStore(reduceConfig, composeEnhancers());
 
-export function Configuratore() {
-  const [index, setIndex] = useState(0);
-
+export const Configuratore = props => {
   storeConfig.subscribe(() => {
-    setIndex(storeConfig.getState().length);
+    props.setIndex(storeConfig.getState().length);
   });
 
-  if (index === configJson.length) {
-    //TODO da cambiare con la pagina finale figlia
-    return <Provider store={storeConfig}>{window.location.reload()}</Provider>;
+  if (props.index === configJson.length) {
+    storeConfig = createStore(reduceConfig, composeEnhancers());
+    props.end();
+    return <></>;
   } else {
     return (
       <Provider store={storeConfig}>
         <MioPasso
           store={storeConfig}
           totaleDomande={configJson.length}
-          index={index}
-          domanda={configJson[index]}
+          index={props.index}
+          domanda={configJson[props.index]}
         />
       </Provider>
     );
   }
-}
+};

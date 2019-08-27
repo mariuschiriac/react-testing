@@ -1,3 +1,10 @@
+.Component {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .intro-image {
   width: auto;
   height: auto;
@@ -48,7 +55,7 @@
 }
 .button:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: -1em;
   bottom: 0;
