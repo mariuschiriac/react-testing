@@ -1,22 +1,14 @@
 [
-  [
-    "atk + 10",
-    "atk * 2",
-    "hp + 50"
-  ],
-  [
-    "atk + 10",
-    "atk * 2",
-    "hp + 50"
-  ],
-  [
-    "atk + 10",
-    "atk * 2",
-    "hp + 50"
-  ],
-  [
-    "atk + 10",
-    "atk * 2",
-    "hp + 50"
-  ]
+  {
+    "nome": "componente 1",
+    "type": "html",
+    "css": "",
+    "html": "",
+    "path": "../modules/first"
+  },
+  {
+    "nome": "componente 2",
+    "type": "react",
+    "path": "../modules/second"
+  }
 ]
