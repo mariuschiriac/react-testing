@@ -1,5 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
-export default {
-  view: () => <div>first component</div>
+const First = props => {
+  return <div>prima componente</div>;
 };
+
+export default First;

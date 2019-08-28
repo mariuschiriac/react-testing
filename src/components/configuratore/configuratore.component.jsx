@@ -1,20 +1,19 @@
-import './configuratore.css';
 import React from 'react';
 import configJSON from '../../assets/config.json';
-import { LazyLoadModule } from './lazy_load.component';
+
+let Components = {};
+
+Components['Componente1'] = require('../modules/first').default;
+Components['Componente2'] = require('../modules/second').default;
 
 export function Configuratore() {
   return (
     <>
       {configJSON.map((value, key) => {
-        const path = value.path;
-        console.log(path);
-        return (
-          <LazyLoadModule
-            key={key}
-            resolve={() => import('../modules/first')}
-          ></LazyLoadModule>
-        );
+        console.log(value.nome);
+        var type = value.nome;
+        const Component = Components[type];
+        return <Component key={key} />;
       })}
     </>
   );

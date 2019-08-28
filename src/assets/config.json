@@ -1,13 +1,13 @@
 [
   {
-    "nome": "componente 1",
+    "nome": "Componente1",
     "type": "html",
     "css": "",
     "html": "",
     "path": "../modules/first"
   },
   {
-    "nome": "componente 2",
+    "nome": "Componente2",
     "type": "react",
     "path": "../modules/second"
   }
