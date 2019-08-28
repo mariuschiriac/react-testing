@@ -1,10 +1,6 @@
 import React from 'react';
 import configJSON from '../../assets/config.json';
-
-let Components = {};
-
-Components['Componente1'] = require('../modules/first').default;
-Components['Componente2'] = require('../modules/second').default;
+import Components from '../index';
 
 export function Configuratore() {
   return (
@@ -13,6 +9,9 @@ export function Configuratore() {
         console.log(value.nome);
         var type = value.nome;
         const Component = Components[type];
+        if (value.contenuto) {
+          return <Component key={key} contenuto={value.contenuto} />;
+        }
         return <Component key={key} />;
       })}
     </>

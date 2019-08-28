@@ -1,14 +1,16 @@
 [
   {
-    "nome": "Componente1",
-    "type": "html",
-    "css": "",
-    "html": "",
-    "path": "../modules/first"
+    "nome": "Container1",
+    "contenuto": [
+      {
+        "nome": "Componente1"
+      },
+      {
+        "nome": "Componente1"
+      }
+    ]
   },
   {
-    "nome": "Componente2",
-    "type": "react",
-    "path": "../modules/second"
+    "nome": "Componente2"
   }
 ]
